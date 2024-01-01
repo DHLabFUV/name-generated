@@ -3,52 +3,46 @@
 @tailwind utilities;
 
 
+
+
+/* Finesse (cho khac)*/
+@font-face {
+  font-family: 'Finesse';
+  src: url('/fonts/Finesse-v2.0/Finesse-v2.0/Fonts/Finesse-Roman.otf') format('truetype');
+  font-weight: 900; 
+  font-style: normal;
+}
+
+/* Finesse (ten) */
+@font-face {
+  font-family: 'Finesse';
+  src: url('/fonts/Finesse-v2.0/Finesse-v2.0/Fonts/Finesse-Oblique.otf') format('truetype');
+  font-weight: 900; 
+  font-style: italic;
+}
+
+/* Be Vietnam Pro */
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('/fonts/Be_Vietnam_Pro/BeVietnamPro-Regular.ttf') format('truetype');
+  font-weight: 900; /* Black weight is typically 900 */
+  font-style: normal;
+}
+
+/*  'Liu Jian Mao Cao' */
+@font-face {
+  font-family: 'Liu Jian Mao Cao';
+  src: url('/public/fonts/Liu_Jian_Mao_Cao/LiuJianMaoCao-Regular.ttf') format('truetype');
+  font-weight: 700; /* Bold weight is typically 700 */
+  font-style: normal;
+}
+
+
 :root {
   --foreground-rgb: 255, 255, 255;
   overflow: clip
 }
 
-/* // Pham Doan Phuong Anh
-color: 'black';
-fontSize: 64;
-fontFamily: 'Finesse';
-fontWeight: '400';
-wordWrap: 'break-word'
----
-// Analyze
-color: 'white';
-fontSize: 24;
-fontFamily: 'Be Vietnam Pro';
-fontWeight: '400';
-wordWrap: 'break-word'
----
-// Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br/>sed do eiusmod tempor incididunt ut
-color: 'black';
-fontSize: 20;
-fontFamily: 'Be Vietnam Pro';
-fontWeight: '400';
-wordWrap: 'break-word'
----
-// Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-color: 'black';
-fontSize: 20;
-fontFamily: 'Be Vietnam Pro';
-fontWeight: '400';
-wordWrap: 'break-word'
----
-// DHLab@Fulbright
-color: 'black';
-fontSize: 32;
-fontFamily: 'Agrandir';
-fontWeight: '700';
-wordWrap: 'break-word'
----
-// facebook.dhlab
-color: 'black';
-fontSize: 20;
-fontFamily: 'Finesse';
-fontWeight: '400';
-wordWrap: 'break-word' */
 
 frame {
   width: '100%'; 

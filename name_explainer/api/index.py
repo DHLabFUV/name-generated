@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 import find_name
 
@@ -10,6 +11,18 @@ filename = 'name_explainer\\api\\final.csv' #csv data file
 
 #initialize app 
 app = Flask(__name__)
+
+
+# app.config.from_object('config')  # Import things from config
+
+CORS(app)
+
+# CORS Headers 
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization,true')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    return response
 
 
 #get name_data
