@@ -33,9 +33,9 @@ def find_meaning(filename, fullname):
 
     if result.shape[0] == 0:
         return json.dumps({"name-double": "",
-                           "meaning": van_mau,
-                           "name-single1": "", "sinovietnamese1": "", "radical1": "", "image1": "",
-                           "name-single2": "", "sinovietnamese2": "", "radical2": "", "image2": ""})
+                            "meaning": van_mau,
+                            "name-single1": "", "sinovietnamese1": "", "radical1": "", "image1": "",
+                            "name-single2": "", "sinovietnamese2": "", "radical2": "", "image2": ""})
     
     elif single:
         result = result.iloc[0].to_dict()

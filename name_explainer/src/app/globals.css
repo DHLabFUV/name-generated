@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-
+/* FONT */
 
 /* Finesse (cho khac)*/
 @font-face {
@@ -37,23 +37,35 @@
   font-style: normal;
 }
 
-
+/* ROOT */
 :root {
   --foreground-rgb: 255, 255, 255;
   overflow: clip
+  
+}
+
+/* FOR MOBILE */
+@media only screen and (max-width: 600px) {
+  :root {
+    background-color: lightblue;
+  }
 }
 
 
-frame {
-  width: '100%'; 
-  height: '100%';
+/* FOR COMPUTER */
+
+
+
+.frame {
+  width: 100%; 
+  height: 100%;
   position: absolute;
-  background: 'white';
+  background: white;
 }
 
-visualizepic {
-  max-width: '50%'; 
-  max-height: '90%'
+.visualizepic {
+  max-width: 100%; 
+  max-height: 100%
 }
 
 body {

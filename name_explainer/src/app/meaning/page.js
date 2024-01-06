@@ -19,8 +19,8 @@ export default function MeaningPage() {
             setLoading(false)
         })
         .catch(rejected => {
-            setdata(data)
-            setLoading(true)
+            // setdata(data)
+            setLoading(false)
         });        
     }, [])
 
