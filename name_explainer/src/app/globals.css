@@ -32,23 +32,18 @@
 /*  'Liu Jian Mao Cao' */
 @font-face {
   font-family: 'Liu Jian Mao Cao';
-  src: url('/public/fonts/Liu_Jian_Mao_Cao/LiuJianMaoCao-Regular.ttf') format('truetype');
+  src: url('/fonts/Liu_Jian_Mao_Cao/LiuJianMaoCao-Regular.ttf') format('truetype');
   font-weight: 700; /* Bold weight is typically 700 */
   font-style: normal;
 }
 
 /* ROOT */
 :root {
-  --foreground-rgb: 255, 255, 255;
-  overflow: clip
+  /* --foreground-rgb: 255, 255, 255; */
+  overflow: clip;
+  height:100%;
+  width:100%
   
-}
-
-/* FOR MOBILE */
-@media only screen and (max-width: 600px) {
-  :root {
-    background-color: lightblue;
-  }
 }
 
 
@@ -60,20 +55,868 @@
   width: 100%; 
   height: 100%;
   position: absolute;
-  background: white;
+  /* background: white; */
 }
 
+
+/* Trang chủ */
 .visualizepic {
   max-width: 100%; 
   max-height: 100%
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+#leftpic{
+  width: 50%;
+  height:90%;
+  left: 0;
+  top: 0;
+  position: absolute
+}
+
+#rightpic{
+  width: 50%;
+  height: 80%;
+  right: -10%;
+  top: 0%;
+  position: absolute;
+  transform: scaleY(-1)
+}
+
+#circlediv{
+  width: 50%;
+  height: 50%;
+  left: 60%;
+  bottom: 45%;
+  position: absolute
+}
+
+#smallcircle{
+  width: 25vw;
+  height:25vw;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  border: 1px black solid
+}
+
+#bigcircle{
+  width: 45vw;
+  height: 45vw;
+  left: 5%;
+  top: 70%;
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  border: 1px black solid;
+  overflow: clip}
+
+#circlepic{width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  border: 1px black solid}
+
+#textform{
+  width: 60%;
+  height: 40%;
+  left: 20%;
+  top: 30%;
+  position: absolute;
+  background-color: white;
+  /* display: flex; */
+  align-items: center;
+  align-content: center;
+  grid-template-rows: auto;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  row-gap: 0;
+  justify-items:center;}
+
+#textinput{
+  display:block;
+  height:30%;
+  top:5%; 
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  position: absolute;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  color: black;
+  font-size: 1.7vw;
+  font-family: Be Vietnam Pro;
+  font-weight: 400;
+  z-index:111;
+  word-wrap: break-word;
+  overflow-wrap: break-word;}
+
+
+#fullnameInput {
+    height: 6vw;
+    width: 90%;
+    top: 50%;
+    justify-self: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: absolute;
+    color: black;
+    font-size: 4vw;
+    font-family: 'Finesse';
+    font-weight: 400;
+    overflow-wrap: break-word;
+    text-align: center;
+    color: black;
+    font-style: italic;
+    overflow: clip;
+    border: none;
+    outline: none;
+    border-bottom: 4px black solid;
+    background: rgb(172, 113, 113, 0.0);
+}
+
+#linking {
+    width: 60%;
+    height: 4%;
+    left: 20%;
+    top: 70%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    color: white;
+}
+
+#linking:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#linking div {
+    margin-left: 2%;
+    margin-top:-2%;
+    top:50%;
+    vertical-align:middle;
+    position: absolute;
+    font-size: 1.5vw;
+    font-family: 'Be Vietnam Pro';
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+#linking img {
+    width: 5%;
+    height: 60%;
+    right: 2%;
+    top: 20%;
+    bottom: 20%;
+    position: absolute;
+    align-self: center;
+}
+
+.additional-text {
+    width: 50%;
+    left: 22%;
+    top: 76%;
+    position: absolute;
+    color: black;
+    font-size: 1.5vw;
+    font-family: 'Be Vietnam Pro';
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.grid-line {
+    position: absolute;
+    border: 1px black solid;
+    z-index: 9999;
+}
+
+.vertical-line-1 {
+    width: 0;
+    height: 100%;
+    left: 20%;
+    top: 0;
+}
+
+.vertical-line-2 {
+    width: 0;
+    height: 100%;
+    left: 80%;
+    top: 0;
+}
+
+.horizontal-line-1 {
+    width: 100%;
+    height: 0;
+    left: 0;
+    top: 30%;
+}
+
+.horizontal-line-2 {
+    width: 100%;
+    height: 0;
+    left: 0;
+    top: 70%;
+}
+
+.horizontal-line-3 {
+    width: 60%;
+    height: 0;
+    left: 20%;
+    top: 74%;
+}
+
+.horizontal-line-4 {
+    width: 20%;
+    height: 0;
+    left: 0;
+    top: 95%;
+}
+
+#fbContent {
+    /* width: 15%; */
+    left: 22%;
+    top: 90%;
+    position: absolute;
+    color: black;
+    font-size: 2vw;
+    font-family: 'Finesse';
+    font-weight: 400;
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+#fbIcon {
+    width: 20%;
+    height: 5%;
+    left: 0;
+    top: 95%;
+    position: absolute;
+    color: black;
+    background-color: white;
+}
+
+#fbIcon svg {
+    display: inline;
+    width: 5%;
+    height: 80%;
+    left: 3%;
+    top: 50%;
+    margin-top: -2vh;
+    position: absolute;
+    justify-self: center;
+    scale: 1.2;
+}
+
+
+#fbIcon p {
+  display: inline;
+    left: 10%;
+    margin-top: -1.3vw;
+    top: 50%;
+    position: absolute;
+    /* color: black; */
+    font-size: 1.8vw;
+    text-align: center;
+    font-family: 'Finesse';
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+
+#fbIcon:hover {
+  /* color: white !important; */
+  background-color: rgba(172, 172, 172, 0.4);
+  /* fill: red !important; */
+}
+
+
+#fbicons{
+  display: flex;
+  width: 20vw;
+  height:7vw;
+  left: 40%;
+  right: 40%;
+  top: 85%;
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Finesse';
+  font-size: 3vw;
+  align-items: center;
+  background: white;
+  border-radius: 50%;
+  border: 1px black solid;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+#fbicons:hover{
+  background-color: rgb(233, 233, 233);
+}
+
+/* Trang meaning */
+
+        /* left section */
+        #leftSection {
+          left: 0;
+          top: 0;
+          width: 40%;
+          height: 85%;
+          position: absolute;
+      }
+
+      /* Facebook section */
+      #fbSection {
+        left: 0;
+        top: 0;
+        padding: 5%;
+        position: absolute;
+        color: black;
+        font-size: 2vw;
+        font-family: 'Finesse';
+        font-weight: 700;
+        word-wrap: break-word;
+        cursor: pointer;
+      }
+
+      /* User input section */
+      #userInputSection {
+        width: 90%;
+        padding-left: 5%;
+        bottom: 0;
+        position: absolute;
+        color: black;
+        font-size: 6vw;
+        font-family: 'Finesse';
+        font-style: italic;
+        font-weight: 400;
+        word-wrap: break-word;
+      }
+
+      /* Top right section */
+      #topRightSection {
+        left: 40%;
+        top: 0;
+        width: 60%;
+        height: 50%;
+        position: absolute;
+      }
+
+      /* Images section */
+      #imagesSection, #imagesSection2 {
+          width: 50%;
+          height: 100%;
+          top: 0;
+          position: absolute;
+          overflow: hidden;
+      }
+
+      #imagesSection2{
+        right: 0;
+      }
+      #img1, #img2 {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          object-fit: contain;
+          overflow: hidden;
+
+      }
+
+      #img2 {
+          right: 0;
+      }
+
+
+
+      /* Overlay background for images */
+      #imageOverlay, #imageOverlay2{
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          position: absolute;
+          background: rgba(255, 255, 255, 0.55);
+      }
+
+      #bg1{
+        width: 100%;
+        height: 50%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        background: rgb(255, 255, 255);
+        z-index: 10;
+        visibility: hidden;
+      }
+    
+      #bg2{
+        width: 90%;
+        height: 50%;
+        left: 10%;
+        bottom: 0;
+        position: absolute;
+        background-color: white;
+        z-index: 7;
+        visibility: hidden;
+      }
+    
+
+
+
+      /* Text sections for images */
+      .textSection {
+          width: 50%;
+          height: 100%;
+          position: absolute;
+          object-fit: contain;
+          color: black;
+      }
+
+      #text1{
+        color: #013F00
+      }
+
+      #text2{ 
+        color: #510035;
+        right: 0
+      }
+
+      #text11, #text23{
+        width:100%;
+        position: absolute;
+        text-align: center;
+        font-size: 10vw;
+        font-family: 'Liu Jian Mao Cao';
+        font-weight: 400;
+      }
+
+      /* Text 1 styles */
+      #text12, #text13, #text22, #text21 {
+          width: 100%;
+          top: 50%;
+          position: absolute;
+          text-align: center;
+          font-family: 'Be Vietnam Pro';
+          word-wrap: break-word;
+      }
+
+      #text11 {
+          left: 0;
+          top: 0;
+      }
+
+      #text12 {
+          left: 0;
+          font-size: 2.2vw;
+      }
+
+      #text13 {
+          width: 100%;
+          left: 0;
+          top: 60%;
+          padding: 1.5%;
+          font-size: 1.1vw;
+      }
+
+      #text23 {
+          left: 0%;
+          top: 0;
+      }
+
+      #text22 {
+          left: 0%;
+          font-size: 2.2vw;
+      }
+
+      #text21 {
+          width: 100%;
+          left: 0;
+          top: 60%;
+          padding: 1.5%;
+          font-size: 1.1vw;
+      }
+
+
+      #text22, #text12, #giaiNghiaSection{
+        text-transform:capitalize
+      }
+
+      .meaningcontainer{
+        left: 40%;
+        top: 50%;
+        width: 60%;
+        height: 50%;
+        position: absolute; 
+      }
+      /* Giai nghia fullname section */
+      #giaiNghiaSection {
+          left: 0;
+          top: 0;
+          padding: 1%;
+          padding-left: 4%;
+          position: absolute;
+          color: black;
+          font-size: 4vw;
+          font-family: 'Finesse';
+          font-weight: 400;
+          word-wrap: break-word;
+      }
+
+      #meaningSection {
+          width: 90%;
+          padding: 1%;
+          padding-left: 4%;
+          left: 0;
+          top: 25%;
+          position: absolute;
+          color: black;
+          font-size: 1.3vw;
+          font-family: 'Be Vietnam Pro';
+          font-weight: 400;
+          word-wrap: break-word;
+      }
+
+      /* Donate form section */
+      #donateFormSection {
+          left: 0;
+          top: 85%;
+          width: 100%;
+          height: 6%;
+          overflow: clip;
+          position: absolute;
+      }
+
+      #donateFormContent {
+          width: 60%;
+          height: 100%;
+          left: 40%;
+          top: 0;
+          position: absolute;
+          background: rgba(217, 217, 217, 0.40);
+      }
+
+      #donateText {
+          left: 0;
+          top: 50%;
+          margin-top: -1.2vw; 
+          padding-left: 2%;
+          color: black;
+          text-align: center;
+          position: absolute;
+          justify-self: center;
+          font-size: 1.8vw;
+          font-family: 'Be Vietnam Pro';
+          font-weight: 400;
+          word-wrap: break-word;
+      }
+
+      #donateArrow {
+          width: 10%;
+          height: 100%;
+          right: 0;
+          padding: 1.5%;
+          position: absolute;
+          /* top: 50%; */
+          /* margin-top: -3vh; */
+          position: absolute;
+          justify-self: center;
+      }
+
+      #donateFormContent:hover{
+        background: rgba(217, 217, 217, 0.8);
+      }
+
+
+
+      /* Grid lines */
+
+      .grid-line-1 {
+        width: 100%;
+        height: 0;
+          top: 85%;
+      }
+
+      .grid-line-2 {
+        width: 100%;
+        height: 0;
+          top: 91%;
+      }
+
+      .grid-line-3 {
+          width: 0;
+          height: 100%;
+          left: 40%;
+      }
+
+      .grid-line-4 {
+          width: 60%;
+          top: 50%;
+          left:40%
+      }
+
+      .grid-line-5{
+        height: 100%;
+        left: 90%;
+        visibility: hidden;
+      }
+
+
+/* FOR MOBILE */
+@media only screen and ((max-width: 800px) or (orientation: portrait)){
+  /* :root {
+    background-color: lightblue;
+  } */
+
+/* Main page */
+  #leftpic{
+    height: auto;
+    width: 60vw;
+  }
+
+  #textform{
+    width: 80%;
+    left: 10%;
+  }
+  #textinput{
+    font-size: 2vw;
+    height: 40%;
+  }
+
+  #fullnameInput{
+    height: 9vw;
+    font-size: 6vw;
+  }
+
+  #rightpic{
+    width: 60vw;
+    top:50%;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    transform: scaleX(-1);
+  }
+
+  #linking{
+    width: 80%;
+    left: 10%;
+  }
+  
+  .vertical-line-1{
+    left: 10%;
+  }
+  
+  .vertical-line-2{
+    left: 90%;
+  }
+
+  .horizontal-line-3 {
+    width: 80%;
+    left: 10%;
+  }
+
+
+  #linking div{
+    font-size: 2vw;
+  }
+  #linking img{
+    transform: scaleX(1.5);
+  }
+
+  /* Meaning page */
+
+  #topRightSection{
+  left: 0;
+  top:25%;
+  width: 100%;
+  }
+
+  #leftSection{
+    left: 10%;
+    height: 25%;
+    
+  }
+  
+  #imagesSection, #imagesSection2 {
+    width: 100%;
+    height: 50%;
+    left: 0;
+}
+#imagesSection2{
+  top: 50%;
+  bottom: 0;
+  left: 10%;
+}
+
+  #img1, #img2{
+    position: absolute;
+    object-fit: cover;
+    width: 50%;
+    height: 100%;
+  }
+  #img1{
+    left: 0;
+    z-index: 11;
+  }
+  #img2{
+    right: 0;
+    bottom: 0;
+    z-index: 8;
+  }
+  
+  .textSection{
+    height: 50%;
+    width: 100%;
+    z-index: 7;
+  }
+  #imageOverlay{
+    height: 100%;
+    z-index: 11;
+  }
+  #imageOverlay2{
+    top: 50%;
+    left: 10%;
+    width: 90%;
+    height: 50%;
+    z-index: 8;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  #bg1, #bg2{
+    visibility: visible;
+  }
+
+  #text1{
+    text-align: right;
+    z-index: 12;
+    font-size: 10vh;
+  }
+
+  #text2{ 
+    width: 90%;
+    left: 10%;
+    bottom:0;
+    z-index: 8;
+    font-size: 10vh;
+  }
+
+  #text11, #text23{
+    font-size: 1.8em;
+    font-family: 'Liu Jian Mao Cao';
+    justify-self: center;
+    text-align: center;
+    font-weight: 400;
+  }
+  #text11{
+    padding-left: 5%;
+    text-align: left;
+  }
+  #text23{
+    text-align: right;
+    padding-right: 5%;
+  }
+  #text12, #text13, #text22, #text21 {
+    width: 100%;
+    position: absolute;
+    text-align: left;
+    font-family: 'Be Vietnam Pro';
+    word-wrap: break-word;
+  }
+
+  #text12, #text22{
+    top:5%;
+    font-family: "Finesse";
+    font-size: 7vw;
+    font-style: italic;
+  }
+
+  #text13,#text21{
+    font-size: 2vw;
+    top:30%;
+    width: 60%;
+  } 
+
+    #text12 {
+        left: 40%;
+    }
+    #text22{
+      left: 2%;
+    }
+    #text13{
+      left: 38%;
+    }
+    #text21{
+      width: 70%;
+    }
+  
+  
+  .meaningcontainer{
+    top:75%;
+    left: 10%;
+    width:80%
+  }
+
+  #giaiNghiaSection{
+    padding-top: 0;
+    font-size: 6.5vw;
+  }
+
+  #meaningSection{
+    top:12%;
+    width: 100%;
+    font-size: 2.2vw;
+  }
+
+  @media screen {
+    
+  }
+
+
+  .grid-line-1{
+    top: 25%;
+  }
+  .grid-line-2{
+    top: 75%;
+  }
+
+  .grid-line-3{
+    left: 10%;
+    z-index: 8;
+  }
+
+  .grid-line-4{
+    left: 0;
+    width: 100%;
+  }
+
+
+  /* Show and hide */
+  #fbContent, #fbIcon, #circlediv,#donateFormSection{
+    visibility: hidden;
+  }
+
+  .horizontal-line-4{
+    visibility: hidden;
+  }
+
+  .additional-text{
+    visibility: hidden;
+      }
+    
+  #fbSection{
+    visibility: hidden;
+  }
+
+#fbicons{
+  visibility:visible;
+}
+.grid-line-5{
+  visibility: visible;
+  mix-blend-mode: normal;
+  z-index: 1;
+}
 }

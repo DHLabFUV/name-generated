@@ -6,22 +6,22 @@ import {useRouter} from "next/navigation";
 
 
 //randomize image in the background
-export function getRandomsquareimg() {
+function getRandomsquareimg() {
   // list tat ca cac anh vuong de chon random
   const squareimg = ['hoa-2 1.png','la 2 1.png','ae023617055a96e8de494729564eae3e.png'];
     return squareimg[Math.floor(Math.random() * squareimg.length)];
   }
   
-export function gotomeaningPage(name){
-    return(<Link
-      href={{
-        pathname:"/meaning",
-        query:{
-          name: name
-        }
-      }}/>
-      )
-    }
+// export function gotomeaningPage(name){
+//     return(<Link
+//       href={{
+//         pathname:"/meaning",
+//         query:{
+//           name: name
+//         }
+//       }}/>
+//       )
+//     }
   
 
 export default function HomePage() {
@@ -44,98 +44,90 @@ export default function HomePage() {
   return (
   <div className='frame' id = 'Homepage'>
     {/* pic 1 (left margin) */}
-    <div style={{width: "50%", height:"80%", left: '0%', top: '0%', position: 'absolute'}}>
+    <div id = "leftpic">
     <img className = 'visualizepic'  src={'/image/squareImg/'+ anh1} />
     </div>
-    {/* pic 2 (right top margin)*/}
-    <div style={{width: "50%", height:"80%",right: '-10%', top: '0%', position: 'absolute', transform: 'scaleY(-1)'}}>
+    {/* pic 2 (right top margin) */}
+    <div id="rightpic">
     <img className = 'visualizepic' src={"/image/squareImg/"+ anh2} />
 
     </div>
-    <div style={{width: '50%', height: '50%', left: '60%', bottom: '45%', position: 'absolute'}}>
+    <div id="circlediv">
       {/* circle 1 (top right) */}
-      <div style={{width: '25vw', height:'25vw', left: 0, bottom: '0', position: 'absolute', background: 'white', borderRadius: 9999, border: '1px black solid'}} />
+      <div id="smallcircle" />
       {/* circle 2 (bottom right, contain image) */}
-      <div style={{width: '45vw', height: '45vw', left: '5%', top: '70%', position: 'absolute', background: 'white', borderRadius: 9999, border: '1px black solid', overflow: 'clip'}}> 
-        <img style={{width: '100%', height: '100%', position: 'absolute', borderRadius: 9999, border: '1px black solid'}} src={"/image/squareImg/"+ anhtron} />
+      <div id="bigcircle" > 
+        <img id="circlepic" src={"/image/squareImg/"+ anhtron} />
       </div>
     </div>
-    {/* */}
-    <form style={{width: '60%', height: '44%', left: '20%', top: '30%', position: 'absolute',}}>
-      <div  style={{height:"30%", left:'20%' ,right: '20%',top:'5%',position: 'absolute', textAlign: 'center', color: 'black', 
-        fontSize: '1.5em', fontFamily: 'Be Vietnam Pro', 
-        fontWeight: 400, zIndex:1111,
-        wordWrap: 'break-word'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br/>sed do eiusmod tempor incididunt ut</div>
-        <div style={{width: '100%', height: '100%', left: 1, top: 0, position: 'absolute',
-        background: 'white'}} />
-        {/* Text field */}
-        <textarea id='fullnameInput' value={name}
-        onChange={(e) => {
+    {/* form */}
+    <form id="textform">
+    <div id="textinput">{"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"}</div>
+    {/* <!-- Text field --> */}
+    <textarea id='fullnameInput' value={name} onChange={(e) => {
           setName(e.target.value)
           if (e.target.value.length > 28){
-            document.getElementById("fullnameInput").style.fontSize = "3em";
+            if(window.getComputedStyle(document.getElementById("fbicons")).visibility === "hidden"){
+              document.getElementById("fullnameInput").style.fontSize="3vw"
+            }
+            else{
+              document.getElementById("fullnameInput").style.fontSize="5vw"
+            }
           }
           else{
-          document.getElementById("fullnameInput").style.fontSize = "3.5em";}
-        }}
-        style={{width: '80%', height: '30%', left: '10%', right: '10%', top: '45%', 
-        position: 'absolute',color: 'black', fontSize: '3.5em', fontFamily: 'Finesse', 
-        fontWeight: 400, overflowWrap: 'break-word', 
-        textAlign: 'center',
-        color:'black', fontStyle:"italic",overflow:'clip',   border: 'none', 
-        outline: 'none',borderBottom: '4px black solid'}}
-        onKeyPress={event => {
+            if(window.getComputedStyle((document.getElementById("fbicons"))).visibility === "hidden"){
+              document.getElementById("fullnameInput").style.fontSize="4vw"
+            }
+            else{
+              document.getElementById("fullnameInput").style.fontSize="6vw"
+          }}}
+        }
+        onKeyDown={event => {
           if (event.key === 'Enter') {
             router.push('/meaning?name='+name)
           }
-        }}
-        />
-        {/* analyze button  */}
-        <Link
-        id="linking"
-        onMouseEnter={(e) => {
-          document.getElementById("linking").style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
-      }}
-      onMouseLeave={(e) => {
-        document.getElementById("linking").style.backgroundColor = 'rgba(0, 0, 0, 0.40)';
-      }}
-      href={{
-          pathname:"/meaning",
-          query:{
-            name: name
-          }
-        }}
-        style={{width: '100%',height: '9%', left: 0, bottom:0, 
-        position: 'absolute', background: 'rgba(0, 0, 0, 0.40)'}}>
-        <div style={{left: '2%',bottom: "0",position: 'absolute', color: 'white', 
-        fontSize: '1.5em', fontFamily: 'Be Vietnam Pro',
-        fontWeight: '400', wordWrap: 'break-word'}}>Analyze</div>
-        <img src="/image/icon/Arrow 1.svg" style={{width: "5%", height: "60%", right: "2%", top:'20%', bottom:'20%', alignSelf:'center', position: 'absolute', alignContent:'center'}} />
-      </Link>
-    </form>
+        }}></textarea>
+</form>
 
+    {/* <!-- analyze button  --> */}
+    <a id="linking" href={"/meaning?name="+name}>
+        <div>Analyze</div>
+        <img src="/image/icon/Arrow 1.svg"/>
+    </a>
 
-    <div style={{width: "50%", left: "22%", top: "76%", position: 'absolute', color: 'black', fontSize: '1.5rem', fontFamily: 'Be Vietnam Pro', fontWeight: '400', wordWrap: 'break-word'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br/>sed do eiusmod tempor incididunt ut</div>
-    
-    {/* grid 1 (vertical) */}
-    <div style={{width:0, height: '100%', left: '20%', top: 0, position: 'absolute',transformOrigin: '0 0', border: '1px black solid'}}></div>
-    {/* grid 2 (vertical) */}
-    <div style={{width: 0, height: '100%', left: '80%', top: 0, position: 'absolute', border: '1px black solid'}}></div>
-    {/* grid 1 (horizontal) */}
-    <div style={{width: '100%', height: 0, left: 0, top: '30%', position: 'absolute', border: '1px black solid'}}></div>
-    {/* grid 2 (horizontal) */}
-    <div style={{width: '100%', height: 0, left: 0, top: '70%', position: 'absolute', border: '1px black solid'}}></div>
-    {/* grid 3 (horizontal) */}
-    <div style={{width: '60%', height: 0, left: '20%', top: '74%', position: 'absolute', border: '1px black solid'}}></div>
-    <div style={{width: '20%', height: 0, left: 0, top: '95%', position: 'absolute', border: '1px black solid'}}></div>
-    <div style={{width: '30%', left: '22%', top: '90%', position: 'absolute', color: 'black', fontSize: '2em', fontFamily: 'Finesse', fontWeight: '400', wordWrap: 'break-word'}}>facebook.dhlab</div>
-    {/* fb */}
-    <div style={{width: '20%', height: "5%", left: 0, top: '95%', position: 'absolute', border: '1px black solid'}}>
-    <div style={{width: '5%', height: "80%", left: "1%", top: '10%', bottom:'10%', position: 'absolute', alignContent:"center"}}>
-      <img src='/image/icon/XMLID_834_.svg'/>
-    </div>
-    <div style={{left: '10%', bottom: '0%', position: 'absolute', color: 'black', fontSize: '1.5em', fontFamily: 'Finesse', fontWeight: '700', wordWrap: 'break-word'}}>DHLab@Fulbright</div>
-    </div>
+<div className="additional-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br/>sed do eiusmod tempor incididunt ut</div>
+
+{/* <!-- Grid Lines --> */}
+<div className="grid-line vertical-line-1"></div>
+<div className="grid-line vertical-line-2"></div>
+<div className="grid-line horizontal-line-1"></div>
+<div className="grid-line horizontal-line-2"></div>
+<div className="grid-line horizontal-line-3"></div>
+<div className="grid-line horizontal-line-4"></div>
+
+{/* <!-- Facebook Content --> */}
+{/* Change the url in the open to the fb page */}
+
+<div id="fbContent" onClick={()=>{
+        window.open("https://www.facebook.com", '_blank')}}>{"DHLab@Fulbright"}</div>
+<button id="fbIcon" onClick={()=>{
+        window.open("https://www.facebook.com", '_blank')}}>
+  <svg fill="currentColor" height="800px" width="800px" version="1.1" id="Layer_1" 
+    viewBox="0 0 310 310">
+      <g id="XMLID_834_">
+        <path id="XMLID_835_" d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064
+          c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996
+          V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545
+          C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703
+          c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z"/>
+      </g>
+  </svg>
+    <p>{"digital humanities lab"}</p>
+</button>
+
+    {/* Change the url in the open to the fb page */}
+<div id="fbicons"  onClick={()=>{
+        window.open("https://www.facebook.com")}}> {"DHLab"} </div>
 </div>
   )
 }
