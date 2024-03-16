@@ -16,9 +16,12 @@ def find_meaning(filename, fullname):
             - fullname str: fullname
     '''
     name = fullname.lower().split()
-    pf = pd.read_csv(filename).fillna("")
+    #pf = pd.read_csv(filename, sep=',').fillna("")
+    pf = pd.read_csv(filename, sep=',').fillna("")
+
     left = 0
     right = len(pf) - 1
+    print(pf.keys())
     
     if len(name) > 1: #user input more than 1 words 
         name = ' '.join(name[-2:]) #only assess the firstname
