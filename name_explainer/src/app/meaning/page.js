@@ -12,7 +12,7 @@ export default function MeaningPage() {
     const [isLoading, setLoading] = useState(true)
     // const[colors, setColor] = useState([])
     useEffect(() => {
-        fetch('http://127.0.0.1:5000/'+ searchparam.get("name"))
+        fetch('https://name-generated-backend.vercel.app/'+ searchparam.get("name"))
         .then((res) => res.json())
         .then((data) => {
             setdata(data)
