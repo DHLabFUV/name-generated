@@ -7,7 +7,7 @@ import find_name
 This is the API for the website 
 '''
 
-filename = 'name_explainer\\api\\final.csv' #csv data file
+filename = '/Users/phamdoanphuonganh/Desktop/DHLab/name-gene/name_explainer/api/final.csv' #csv data file
 
 #initialize app 
 app = Flask(__name__)

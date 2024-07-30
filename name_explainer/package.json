@@ -1,4 +1,5 @@
 {
+  
   "name": "name_explainer",
   "version": "0.1.0",
   "private": true,
@@ -6,13 +7,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export",
+    "deploy": "npm run build && npm run export && gh-pages -d out"
   },
   "dependencies": {
     "googleapis": "^128.0.0",
-    "next": "14.0.3",
-    "react": "^18",
-    "react-dom": "^18"
+    "next": "^14.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/node": "20.10.6",

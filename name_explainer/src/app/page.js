@@ -62,7 +62,7 @@ export default function HomePage() {
     </div>
     {/* form */}
     <form id="textform">
-    <div id="textinput">{"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"}</div>
+    <div id="textinput">{"Enter 2 letters from your first name. We will explain your name in Sino-Vietnamese (Eg: Nguyễn Văn A -> input Văn A to the box)"}</div>
     {/* <!-- Text field --> */}
     <textarea id='fullnameInput' value={name} onChange={(e) => {
           setName(e.target.value)
@@ -109,9 +109,9 @@ export default function HomePage() {
 {/* Change the url in the open to the fb page */}
 
 <div id="fbContent" onClick={()=>{
-        window.open("https://www.facebook.com", '_blank')}}>{"DHLab@Fulbright"}</div>
+        window.open("https://dhlabfuv.github.io/DHLab-Website-Official/", '_blank')}}>{"DHLab@Fulbright"}</div>
 <button id="fbIcon" onClick={()=>{
-        window.open("https://www.facebook.com", '_blank')}}>
+        window.open("https://dhlabfuv.github.io/DHLab-Website-Official/", '_blank')}}>
   <svg fill="currentColor" height="800px" width="800px" version="1.1" id="Layer_1" 
     viewBox="0 0 310 310">
       <g id="XMLID_834_">
@@ -127,7 +127,7 @@ export default function HomePage() {
 
     {/* Change the url in the open to the fb page */}
 <div id="fbicons"  onClick={()=>{
-        window.open("https://www.facebook.com")}}> {"DHLab"} </div>
+        window.open("https://dhlabfuv.github.io/DHLab-Website-Official/")}}> {"DHLab"} </div>
 </div>
   )
 }
